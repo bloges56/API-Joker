@@ -8,7 +8,36 @@ jokeBtn.addEventListener("click", (e) => {
   console.log("I should be grabbing a joke now...");
   // TODO: fetch a joke from the Joke API and render it to the DOM
   const type = document.querySelector("#types").value;
-  getJoke(type)
+  if(type === "knock-knock"){
+    getJoke(type)
+    .then( _ => {
+      return useJoke()
+    })
+    .then(joke => {
+      jokeCont.innerHTML = Joke(joke)
+      return joke
+    })
+    .then(joke => {
+      const jokeArr = joke.setup.split('\n');
+      const whosThere = document.querySelector(".whos-there");
+      const knockSet = document.querySelector(".knock-setup");
+      whosThere.addEventListener("click", (e) => {
+        knockSet.innerHTML = jokeArr[2];
+        jokeCont.innerHTML += `
+          <button class="final-quest">${jokeArr[3]}</button>
+          <p class="punchline">
+          </p>
+          `;
+        const setupBTN = document.querySelector(".final-quest");
+        const punchline = document.querySelector(".punchline");
+        setupBTN.addEventListener("click", (e) => {
+          punchline.innerHTML = joke.punchline;
+        })
+      });
+    })
+  }
+  else {
+    getJoke(type)
     .then( _ => {
       return useJoke()
     })
@@ -23,6 +52,7 @@ jokeBtn.addEventListener("click", (e) => {
         punchCont.innerHTML = joke.punchline;
       });
     })
+  }
 });
 
 
