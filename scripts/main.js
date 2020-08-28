@@ -7,6 +7,11 @@ jokeBtn.addEventListener("click", (e) => {
   // TODO: fetch a joke from the Joke API and render it to the DOM
 });
 
+var joke = {};
 
-getJoke();
-var joke = useJoke();
+getJoke()
+  .then( _ => {
+    joke = useJoke()
+    console.log("joke from line 14:", joke)
+  })
+
