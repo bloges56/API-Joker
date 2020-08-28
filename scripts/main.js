@@ -23,16 +23,23 @@ jokeBtn.addEventListener("click", (e) => {
       const knockSet = document.querySelector(".knock-setup");
       whosThere.addEventListener("click", (e) => {
         knockSet.innerHTML = jokeArr[2];
-        jokeCont.innerHTML += `
+        if(jokeArr[2] !== " Opportunity."){
+          jokeCont.innerHTML += `
           <button class="final-quest">${jokeArr[3]}</button>
           <p class="punchline">
           </p>
           `;
-        const setupBTN = document.querySelector(".final-quest");
-        const punchline = document.querySelector(".punchline");
-        setupBTN.addEventListener("click", (e) => {
-          punchline.innerHTML = joke.punchline;
-        })
+          const setupBTN = document.querySelector(".final-quest");
+          const punchline = document.querySelector(".punchline");
+          setupBTN.addEventListener("click", (e) => {
+            punchline.innerHTML = joke.punchline;
+          })
+        }
+        else{
+          jokeCont.innerHTML += `
+            <p>${joke.punchline}<p>
+          `;
+        }
       });
     })
   }
