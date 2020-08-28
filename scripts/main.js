@@ -12,10 +12,15 @@ jokeBtn.addEventListener("click", (e) => {
       return useJoke()
     })
     .then(joke =>{
-      return Joke(joke)
+      jokeCont.innerHTML = Joke(joke)
+      return joke
     })
-    .then(jokeHTML => {
-      jokeCont.innerHTML = jokeHTML
+    .then(joke => {
+      const punchCont = document.querySelector(".joke-punchline");
+      const punchBtn = document.querySelector(".punchline-btn");
+      punchBtn.addEventListener("click", (e) => {
+        punchCont.innerHTML = joke.punchline;
+      });
     })
 });
 

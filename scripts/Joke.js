@@ -6,8 +6,8 @@ export const Joke = (joke) => {
         <p class="joke-setup">
             ${joke.setup}
         </p>
-        <p class="joke-punchline">
-            ${joke.punchline}
+        <button class="punchline-btn">Punchline</button>
+        <p class ="joke-punchline">
         </p>
     `;
 }
