@@ -13,9 +13,8 @@ export const getJoke = () => {
 }
 
 export const useJoke = () => {
-    //var retObject = {};
-    //return Object.assign(retObject, joke);
-    return joke;
+    var retObject = {};
+    return Object.assign(retObject, joke);
 }
 
 
