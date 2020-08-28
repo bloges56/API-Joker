@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/main.css" />
-    <title>API Joker</title>
-  </head>
-  <body>
-    <header>
-      <h1>API Joker</h1>
-    </header>
-    <section>
-      <button class="request-joke-btn">Tell me a joke!</button>
-        <div class = "joke">
-          <!-- <p class="joke-setup">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <title>API Joker</title>
+</head>
+
+<body>
+  <header>
+    <h1>API Joker</h1>
+  </header>
+  <section>
+    <label for="types">Choose a Type of Joke:</label>
+    <select name="types" id="types">
+      <option value="general">General</option>
+      <option value="programming">Programming</option>
+      <option value="knock-knock">Knock-Knock</option>
+    </select>
+    <button class="request-joke-btn">Tell me a joke!</button>
+    <div class="joke">
+      <!-- <p class="joke-setup">
             Joke Setup Goes Here
           </p>
           <p class="joke-punchline">
             Punchline Goes Here
           </p> -->
-        </div>
-      
-    </section>
-  </body>
-  <script src="scripts/main.js" type="module"></script>
+    </div>
+
+  </section>
+</body>
+<script src="scripts/main.js" type="module"></script>
+
 </html>
